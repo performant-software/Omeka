@@ -4,105 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9ee307d391a4b78a77657591ef438698",
-    "packages": [
-        {
-            "name": "miljar/php-exif",
-            "version": "v0.6.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/PHPExif/php-exif.git",
-                "reference": "e43cc30608824d7f3466653b52bbbb71874b5b02"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/PHPExif/php-exif/zipball/e43cc30608824d7f3466653b52bbbb71874b5b02",
-                "reference": "e43cc30608824d7f3466653b52bbbb71874b5b02",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "phpmd/phpmd": "~2.2",
-                "phpunit/phpunit": "3.7.*",
-                "satooshi/php-coveralls": "~0.6",
-                "sebastian/phpcpd": "1.4.*@stable",
-                "squizlabs/php_codesniffer": "1.4.*@stable"
-            },
-            "suggest": {
-                "ext-exif": "Use exif PHP extension as adapter",
-                "lib-exiftool": "Use perl lib exiftool as adapter"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "PHPExif": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Tom Van Herreweghe",
-                    "homepage": "http://theanalogguy.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Object-Oriented EXIF parsing",
-            "keywords": [
-                "IPTC",
-                "exif",
-                "exiftool",
-                "jpeg",
-                "tiff"
-            ],
-            "time": "2017-02-06T14:40:26+00:00"
-        },
-        {
-            "name": "rfd/imagemagick",
-            "version": "1.3.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/rfdy/imagemagick.git",
-                "reference": "ddbbd47d602ccbfbc51aef475a6ca0f238789bb8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/rfdy/imagemagick/zipball/ddbbd47d602ccbfbc51aef475a6ca0f238789bb8",
-                "reference": "ddbbd47d602ccbfbc51aef475a6ca0f238789bb8",
-                "shasum": ""
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.4.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Rfd\\ImageMagick\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Tyler Lawson",
-                    "email": "tyler.lawson@yp.ca"
-                }
-            ],
-            "description": "RFD ImageMagick Library",
-            "time": "2017-02-06T11:41:26+00:00"
-        }
-    ],
+    "content-hash": "e73cc7e57476049036fdc5e9ef504d03",
+    "packages": [],
     "packages-dev": [
         {
             "name": "friendsofphp/php-cs-fixer",
@@ -862,7 +765,9 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^5.6.0"
+        "php": "^5.6.0",
+        "ext-exif": "*",
+        "ext-imagick": "*"
     },
     "platform-dev": []
 }
