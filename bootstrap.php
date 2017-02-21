@@ -125,6 +125,11 @@ define('PUBLIC_BASE_URL', $publicPath);
 define('INSTALL_BASE_URL', $installPath);
 define('CURRENT_BASE_URL', $currentPath);
 
+define('CLEARDB_DATABASE_HOST', getenv("CLEARDB_DATABASE_HOST");
+define('CLEARDB_DATABASE_USER', getenv("CLEARDB_DATABASE_USER");
+define('CLEARDB_DATABASE_PASS', getenv("CLEARDB_DATABASE_PASS");
+define('CLEARDB_DATABASE_NAME', getenv("CLEARDB_DATABASE_NAME");
+
 // If date.timezone is not set, this will query the OS for the timezone and set 
 // that as the default. Workaround for PHP 5.3 behavior for timezones.
 date_default_timezone_set(@date_default_timezone_get());
