@@ -22,22 +22,17 @@ if (!defined('APPLICATION_ENV')) {
 
 // Define directory path constants.
 
-$db_host = getenv('CLEARDB_DATABASE_HOST');
-$db_user = getenv('CLEARDB_DATABASE_USER');
-$db_pass = getenv('CLEARDB_DATABASE_PASS');
-$db_name = getenv('CLEARDB_DATABASE_NAME');
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+$db_host = $url["host"]
+$db_user = $url["user"];
+$db_pass = $url["pass"];
+$db_name = substr($url["path"], 1);
 
 define('CLEARDB_DATABASE_HOST', $db_host);
 define('CLEARDB_DATABASE_USER', $db_user);
 define('CLEARDB_DATABASE_PASS', $db_pass);
 define('CLEARDB_DATABASE_NAME', $db_name);
-
-// $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-
-// $server = $url["host"];
-// $username = $url["user"];
-// $password = $url["pass"];
-// $db = substr($url["path"], 1);
 
 // $conn = new mysqli($server, $username, $password, $db);
 
