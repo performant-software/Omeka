@@ -22,6 +22,25 @@ if (!defined('APPLICATION_ENV')) {
 
 // Define directory path constants.
 
+$db_host = getenv('CLEARDB_DATABASE_HOST');
+$db_user = getenv('CLEARDB_DATABASE_USER');
+$db_pass = getenv('CLEARDB_DATABASE_PASS');
+$db_name = getenv('CLEARDB_DATABASE_NAME');
+
+define('CLEARDB_DATABASE_HOST', $db_host);
+define('CLEARDB_DATABASE_USER', $db_user);
+define('CLEARDB_DATABASE_PASS', $db_pass);
+define('CLEARDB_DATABASE_NAME', $db_name);
+
+// $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+// $server = $url["host"];
+// $username = $url["user"];
+// $password = $url["pass"];
+// $db = substr($url["path"], 1);
+
+// $conn = new mysqli($server, $username, $password, $db);
+
 define('BASE_DIR', dirname(__FILE__));
 define('APP_DIR', BASE_DIR . '/application');
 define('PLUGIN_DIR', BASE_DIR . '/plugins');
@@ -124,16 +143,6 @@ define('ADMIN_BASE_URL', $adminPath);
 define('PUBLIC_BASE_URL', $publicPath);
 define('INSTALL_BASE_URL', $installPath);
 define('CURRENT_BASE_URL', $currentPath);
-
-$db_host = getenv('CLEARDB_DATABASE_HOST');
-$db_user = getenv('CLEARDB_DATABASE_USER');
-$db_pass = getenv('CLEARDB_DATABASE_PASS');
-$db_name = getenv('CLEARDB_DATABASE_NAME');
-
-define('CLEARDB_DATABASE_HOST', $db_host);
-define('CLEARDB_DATABASE_USER', $db_user);
-define('CLEARDB_DATABASE_PASS', $db_pass);
-define('CLEARDB_DATABASE_NAME', $db_name);
 
 // If date.timezone is not set, this will query the OS for the timezone and set 
 // that as the default. Workaround for PHP 5.3 behavior for timezones.
