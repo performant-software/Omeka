@@ -4,6 +4,9 @@
 [submodule "plugins/SimplePages"]
 	path = plugins/SimplePages
 	url = git://github.com/omeka/plugin-SimplePages
+[submodule "plugins/Neatline"]
+	path = plugins/Neatline
+	url = git://github.com/performant-software/Neatline#jf/googlemaps
 [submodule "themes/default"]
 	path = themes/default
 	url = git://github.com/omeka/theme-thanksroy
