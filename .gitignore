@@ -24,7 +24,7 @@
 /application/tests/_files/temp/
 
 # Plugins and themes
-/plugins/
+#/plugins/
 /themes/
 
 # Files

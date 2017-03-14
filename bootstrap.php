@@ -20,6 +20,12 @@ if (!defined('APPLICATION_ENV')) {
     define('APPLICATION_ENV', $app_env);
 }
 
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$db_host = $url["host"];
+$db_user = $url["user"];
+$db_pass = $url["pass"];
+$db_name = substr($url["path"], 1);
+
 // Define directory path constants.
 
 define('BASE_DIR', dirname(__FILE__));
