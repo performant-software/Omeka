@@ -44,3 +44,5 @@
 .buildpath
 .project
 .settings/
+
+.env*

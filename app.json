@@ -1,0 +1,49 @@
+{
+  "name": "Omeka+Neatline",
+  "description": "",
+  "repository": "https://github.com/performant-software/omeka",
+  "scripts": {
+    "postdeploy": "sh ./review-app-postdeploy.sh"
+  },
+  "env": {
+    "STAGING_DATABASE_URL": {
+      "required": true
+    },
+    "HEROKU_APP_NAME": {
+      "required": true
+    },
+    "HEROKU_PARENT_APP_NAME": {
+      "required": true
+    },
+
+
+    "AWS_ACCESS_KEY_ID": {
+      "required": true
+    },
+    "AWS_SECRET_ACCESS_KEY": {
+      "required": true
+    },
+    "AWS_REGION": {
+      "required": true
+    },
+    "S3_BUCKET_NAME": {
+      "required": true
+    }
+  },
+  "addons": [
+    "cleardb:ignite",
+  ],
+  "formation": {
+    "worker": {
+      "quantity": 1
+    },
+    "web": {
+      "quantity": 1
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/php"
+    }
+  ]
+}
