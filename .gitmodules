@@ -6,7 +6,7 @@
 	url = git://github.com/omeka/plugin-SimplePages
 [submodule "plugins/Neatline"]
 	path = plugins/Neatline
-	url = git://github.com/performant-software/Neatline#jf/wms
+	url = git://github.com/performant-software/Neatline#as/tool-grabber
 [submodule "themes/default"]
 	path = themes/default
 	url = git://github.com/omeka/theme-thanksroy
