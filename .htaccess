@@ -49,6 +49,11 @@ RewriteRule .* index.php
     </IfModule>
 </FilesMatch>
 
+<FilesMatch ".(eot|ttf|otf|woff)">
+	Header set Access-Control-Allow-Origin "*"
+</FilesMatch>
+
+
 # --------#
 # Caching #
 # --------#
