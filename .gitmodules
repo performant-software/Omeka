@@ -18,4 +18,4 @@
 	url = git://github.com/omeka/theme-berlin.git
 [submodule "plugins/Neatline"]
 	path = plugins/Neatline
-	url = git@github.com:performant-software/Neatline.git
+	url = git://github.com/performant-software/Neatline.git
