@@ -11,7 +11,7 @@
 /vendor/
 
 # Config files
-/db.ini
+#/db.ini
 /application/config/config.ini
 /application/tests/config.ini
 
