@@ -1,5 +1,8 @@
 # Root .htaccess
-/.htaccess
+#/.htaccess
+
+# php-cs-fixer cache
+/.php_cs.cache
 
 # php-cs-fixer cache
 /.php_cs.cache
@@ -11,8 +14,8 @@
 /vendor/
 
 # Config files
-/db.ini
-/application/config/config.ini
+#/db.ini
+#/application/config/config.ini
 /application/tests/config.ini
 
 # Log files
