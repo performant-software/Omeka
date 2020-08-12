@@ -1,23 +1,42 @@
 <?php
-/**
- * Omeka
- * 
- * @copyright Copyright 2007-2012 Roy Rosenzweig Center for History and New Media
- * @license http://www.gnu.org/licenses/gpl-3.0.txt GNU GPLv3
- * @package Omeka
- */
+use Zend\View\Model\ViewModel;
 
-// Bootstrap the application.
-require_once 'bootstrap.php';
+error_reporting(E_ALL);
+if ((isset($_SERVER['APPLICATION_ENV'])
+        && 'development' == $_SERVER['APPLICATION_ENV'])
+    ||
+    (isset($_SERVER['REDIRECT_APPLICATION_ENV'])
+        && 'development' == $_SERVER['REDIRECT_APPLICATION_ENV'])
+) {
+    ini_set('display_errors', 1);
+} else {
+    ini_set('display_errors', 0);
+}
 
-// Configure, initialize, and run the application.
-$application = new Omeka_Application(APPLICATION_ENV);
-$application->getBootstrap()->setOptions(array(
-    'resources' => array(
-        'theme' => array(
-            'basePath' => THEME_DIR,
-            'webBasePath' => WEB_THEME
-        )
-    )
-));
-$application->initialize()->run();
+require 'bootstrap.php';
+
+try {
+    $application = Omeka\Mvc\Application::init(require 'application/config/application.config.php');
+    try {
+        $application->run();
+    } catch (\Exception $e) {
+        $viewRenderer = $application->getServiceManager()->get('ViewRenderer');
+        $model = new ViewModel;
+        $model->setTemplate('error/index');
+        $model->setVariable('exception', $e);
+        $content = $viewRenderer->render($model);
+        $parentModel = $application->getMvcEvent()->getViewModel();
+        if (!$parentModel) {
+            $parentModel = new ViewModel;
+        }
+        $parentModel->setTemplate('layout/layout');
+        $parentModel->setVariable('content', $content);
+        http_response_code(500);
+        error_log($e);
+        echo $viewRenderer->render($parentModel);
+    }
+} catch (\Exception $e) {
+    http_response_code(500);
+    error_log($e);
+    include OMEKA_PATH . '/application/view/error/fallback.phtml';
+}
